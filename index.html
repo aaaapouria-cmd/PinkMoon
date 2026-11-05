@@ -1,4 +1,4 @@
-<!doctype html>
+  <!doctype html>
 <html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pink Moon ♡</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
@@ -21,11 +21,11 @@
 <section class="page" id="quiz"><div class="panel quizcard"><h2>چقدر منو می‌شناسی؟ ♡</h2><div class="progress"><i id="progress"></i></div><div id="quizContent"></div></div></section>
 <div class="footer">Made with love for Mobin ♡ 🎀</div></main></div></div><div class="lightbox" id="lightbox" onclick="closePhoto()"><button aria-label="بستن" onclick="closePhoto()">×</button><img id="lightboxImg" alt="عکس از گالری" onclick="event.stopPropagation()"></div>
 <script>
-const galleryPhotos=['gallery-1.jpg','gallery-2.jpg','gallery-3.jpg','gallery-4.jpg','gallery-15.jpg','gallery-6.jpg'];
+const galleryPhotos=['gallery-1.jpg','gallery-2.jpg','gallery-3.jpg','gallery-4.jpg','gallery-5.jpg','gallery-6.jpg'];
 const photoGrid=document.getElementById('photoGrid'),homeThumbs=document.getElementById('homeThumbs');
 function openPhoto(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open')}
 function closePhoto(){document.getElementById('lightbox').classList.remove('open')}
-galleryPhotos.forEach((file,i)=>{let src='gallery/'+file;let card=document.createElement('div');card.className='gallery-shot';card.innerHTML=`<img src="${src}" alt="عکس گالری ${i+1}" loading="lazy"><span>قاب خاطره ${String(i+1).toLocaleString('fa-IR')} ♡</span>`;card.onclick=()=>openPhoto(src);photoGrid.appendChild(card);let thumb=document.createElement('div');thumb.className='thumb';thumb.innerHTML=`<img src="${src}" alt="عکس ${i+1}" loading="lazy">`;thumb.onclick=()=>{showPage('memories');openPhoto(src)};homeThumbs.appendChild(thumb)});
+galleryPhotos.forEach((file,i)=>{let src=file;let card=document.createElement('div');card.className='gallery-shot';card.innerHTML=`<img src="${src}" alt="عکس گالری ${i+1}" loading="lazy"><span>قاب خاطره ${String(i+1).toLocaleString('fa-IR')} ♡</span>`;card.onclick=()=>openPhoto(src);photoGrid.appendChild(card);let thumb=document.createElement('div');thumb.className='thumb';thumb.innerHTML=`<img src="${src}" alt="عکس ${i+1}" loading="lazy">`;thumb.onclick=()=>{showPage('memories');openPhoto(src)};homeThumbs.appendChild(thumb)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePhoto()});
 const pages=[...document.querySelectorAll('.page')];function showPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='quiz'&&!started)renderQ();window.scrollTo({top:0,behavior:'smooth'})}document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
 const labels=['📸 عکس','🎥 ویدیو','🎙️ ویس','🎁 انتخاب با تو','💌 نامه','🎵 آهنگ','🔄 دوباره بچرخون','😈 جریمه'];function makeWheel(el){labels.forEach((t,i)=>{let s=document.createElement('span');s.className='wlabel';s.textContent=t;el.appendChild(s)})}makeWheel(document.getElementById('miniWheel'));makeWheel(document.getElementById('bigWheel'));
