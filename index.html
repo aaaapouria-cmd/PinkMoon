@@ -13,7 +13,7 @@
 body{margin:0;background:radial-gradient(ellipse at 50% -15%,#511348,#16091b 42%,#08040c 80%);color:#ffe8f7;font-family:Vazirmatn,sans-serif;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#ffc5e9 1px,transparent 1.5px),radial-gradient(#d98aff 1px,transparent 1.5px);background-size:73px 73px,113px 113px;background-position:0 0,30px 40px;z-index:-1}
 button{font:inherit;cursor:pointer}
-.shell{max-width:1480px;margin:auto;padding:12px 20px}
+.shell{max-width:1480px;margin:auto;padding:12px 20px;position:relative;z-index:1}
 .top{height:70px;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;border-bottom:1px solid #ff8ad044}
 .pill{border:1px solid var(--line);border-radius:30px;padding:9px 16px;background:#2a0c28aa;width:max-content;font-size:13px}
 .pill.end{justify-self:end}
@@ -21,11 +21,11 @@ button{font:inherit;cursor:pointer}
 .brand small{display:block;font:11px Vazirmatn;color:#f9c9e8}
 .layout{display:grid;grid-template-columns:185px 1fr;gap:17px;margin-top:14px}
 .side{background:linear-gradient(#230b25ee,#100711ee);border:1px solid var(--line);border-radius:22px;padding:15px 12px;min-height:680px;box-shadow:0 0 20px #ff4ab433;position:relative}
-.avatar{width:120px;height:120px;border:3px solid var(--pink);border-radius:50%;margin:8px auto;display:grid;place-items:center;font-size:55px;background:radial-gradient(circle,#ffb4e5,#8f3e8b 48%,#25102e);box-shadow:0 0 20px #ff36b2}
+.avatar{width:120px;height:120px;border:3px solid var(--pink);border-radius:50%;margin:8px auto;display:grid;place-items:center;font-size:55px;background:radial-gradient(circle,#ffb4e5,#8f3e8b 48%,#25102e);box-shadow:0 0 20px #ff36b2;animation:avatarGlow 3s ease-in-out infinite alternate}
 .name{text-align:center;font-weight:800}
 .sub{text-align:center;color:#d9a4cb;font-size:11px;margin:3px 0 20px}
 .nav{display:grid;gap:7px}
-.nav button{border:0;text-align:right;color:#f4c6e5;background:transparent;padding:10px 12px;border-radius:24px}
+.nav button{border:0;text-align:right;color:#f4c6e5;background:transparent;padding:10px 12px;border-radius:24px;transition:.25s}
 .nav button:hover,.nav button.active{background:linear-gradient(90deg,#ff8ad1,#d93aa8);color:#250b23;font-weight:800;box-shadow:0 0 15px #ff36b2}
 .love{position:absolute;bottom:18px;text-align:center;left:0;right:0;font:28px "Great Vibes";color:#ff9bd8}
 .main{min-width:0}
@@ -34,9 +34,12 @@ button{font:inherit;cursor:pointer}
 .hero-copy{position:relative;z-index:1;max-width:56%}
 .hero h1{font-size:clamp(22px,3vw,35px);color:#ff9bd9;text-shadow:0 0 15px #ff36b2;margin:0 0 10px}
 .hero p{line-height:2;color:#f4cde6;font-size:14px}
-.btn{border:1px solid #ffc2e7;background:linear-gradient(110deg,#ffb2e2,#ef55b5);color:#300d2c;border-radius:30px;padding:10px 21px;font-weight:800;box-shadow:0 0 14px #ff36b2;cursor:pointer}
+.btn{border:1px solid #ffc2e7;background:linear-gradient(110deg,#ffb2e2,#ef55b5);color:#300d2c;border-radius:30px;padding:10px 21px;font-weight:800;box-shadow:0 0 14px #ff36b2;cursor:pointer;transition:transform .25s,box-shadow .25s,filter .25s}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 12px #ff83cf,0 0 30px #ff36b2;filter:brightness(1.12)}
+.btn:active{transform:scale(.96)}
 .grid{display:grid;grid-template-columns:1.08fr 1fr 1.08fr;gap:12px}
-.panel{background:linear-gradient(145deg,rgba(45,15,44,.92),rgba(16,7,19,.95));border:1px solid var(--line);border-radius:20px;box-shadow:0 0 13px #ff4eb333,inset 0 0 22px #ff65c40a;padding:15px;min-height:175px;position:relative;overflow:hidden}
+.panel{background:linear-gradient(145deg,rgba(45,15,44,.92),rgba(16,7,19,.95));border:1px solid var(--line);border-radius:20px;box-shadow:0 0 13px #ff4eb333,inset 0 0 22px #ff65c40a;padding:15px;min-height:175px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.panel:hover{box-shadow:0 0 22px #ff4eb355}
 .panel:before{content:"✧";position:absolute;left:12px;top:3px;color:#ff9cdb;font-size:24px}
 .panel h2{font-size:16px;color:#ffb2df;margin:0 0 12px}
 .count{display:flex;gap:6px;justify-content:space-around;margin:15px 0}
@@ -45,7 +48,7 @@ button{font:inherit;cursor:pointer}
 .time span{font-size:10px}
 .letter{height:80px;display:grid;place-items:center;font-size:60px}
 .wheelrow{display:flex;align-items:center;gap:12px}
-.wheel{width:176px;height:176px;flex:0 0 176px;border-radius:50%;border:4px solid #ffb0df;box-shadow:0 0 18px #ff36b2;position:relative;transition:transform 3s cubic-bezier(.12,.75,.15,1);background:conic-gradient(#ff8bd1 0 45deg,#451344 45deg 90deg,#ffc0e7 90deg 135deg,#552052 135deg 180deg,#ff8bd1 180deg 225deg,#451344 225deg 270deg,#ffc0e7 270deg 315deg,#552052 315deg)}
+.wheel{width:176px;height:176px;flex:0 0 176px;border-radius:50%;border:4px solid #ffb0df;box-shadow:0 0 18px #ff36b2;position:relative;transition:transform 3s cubic-bezier(.12,.75,.15,1);background:conic-gradient(#ff8bd1 0 45deg,#451344 45deg 90deg,#ffc0e7 90deg 135deg,#552052 135deg 180deg,#ff8bd1 180deg 225deg,#451344 225deg 270deg,#ffc0e7 270deg 315deg,#552052 315deg);filter:drop-shadow(0 0 8px #ff36b2)}
 .wheel:after{content:"♡";position:absolute;inset:65px;border-radius:50%;background:#250b2a;border:2px solid #ffc1e7;display:grid;place-items:center;color:#ff9bd8;font-size:24px;z-index:2}
 .wlabel{position:absolute;left:50%;top:50%;width:70px;margin-left:-35px;margin-top:-9px;text-align:center;font-size:9px;font-weight:800;color:#2a0825;text-shadow:0 1px 2px #fff;transform-origin:center;z-index:1;line-height:1.1}
 .wlabel:nth-child(1){transform:rotate(22.5deg) translateY(-68px) rotate(-22.5deg)}
@@ -57,19 +60,26 @@ button{font:inherit;cursor:pointer}
 .wlabel:nth-child(7){transform:rotate(292.5deg) translateY(-68px) rotate(-292.5deg)}
 .wlabel:nth-child(8){transform:rotate(337.5deg) translateY(-68px) rotate(-337.5deg)}
 .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.thumb{aspect-ratio:1;border-radius:8px;border:1px solid #ff9bd877;background:linear-gradient(135deg,#71386e,#24102e);display:grid;place-items:center;font-size:26px;overflow:hidden;cursor:pointer}
+.thumb{aspect-ratio:1;border-radius:8px;border:1px solid #ff9bd877;background:linear-gradient(135deg,#71386e,#24102e);display:grid;place-items:center;font-size:26px;overflow:hidden;cursor:pointer;transition:transform .25s}
+.thumb:hover{transform:scale(1.05)}
 .thumb img{width:100%;height:100%;object-fit:cover}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
-.gallery-shot{position:relative;aspect-ratio:3/4;border:1px solid #ff9bd899;border-radius:16px;overflow:hidden;background:#210e27;box-shadow:0 0 15px #ff4eb322;cursor:zoom-in;transition:transform .25s,box-shadow .25s}
+.gallery-shot{position:relative;aspect-ratio:3/4;border:1px solid #ff9bd899;border-radius:16px;overflow:hidden;background:#210e27;box-shadow:0 0 15px #ff4eb322;cursor:zoom-in;transition:transform .25s,box-shadow .25s;opacity:0;animation:photoReveal .7s ease forwards}
 .gallery-shot:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 0 22px #ff4eb377}
-.gallery-shot img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.gallery-shot:hover img{transform:scale(1.06)}
 .gallery-shot span{position:absolute;inset:auto 0 0;padding:20px 10px 9px;background:linear-gradient(transparent,#160715dd);font-size:11px;color:#ffe4f4}
+.gallery-shot:nth-child(2){animation-delay:.1s}
+.gallery-shot:nth-child(3){animation-delay:.2s}
+.gallery-shot:nth-child(4){animation-delay:.3s}
+.gallery-shot:nth-child(5){animation-delay:.4s}
+.gallery-shot:nth-child(6){animation-delay:.5s}
 .lightbox{display:none;position:fixed;inset:0;background:#08030def;z-index:20;align-items:center;justify-content:center;padding:20px}
-.lightbox.open{display:flex}
-.lightbox img{max-width:min(92vw,900px);max-height:86vh;object-fit:contain;border:1px solid #ff9bd8;border-radius:15px;box-shadow:0 0 30px #ff36b2}
+.lightbox.open{display:flex;animation:fadeIn .25s ease}
+.lightbox img{max-width:min(92vw,900px);max-height:86vh;object-fit:contain;border:1px solid #ff9bd8;border-radius:15px;box-shadow:0 0 30px #ff36b2;animation:photoZoom .3s ease}
 .lightbox button{position:absolute;top:18px;left:20px;border:1px solid #ff9bd8;background:#2a0c28;color:#ffe8f7;border-radius:50%;width:42px;height:42px;font-size:22px}
 .music{display:flex;align-items:center;gap:13px}
-.vinyl{width:95px;height:95px;border-radius:50%;background:repeating-radial-gradient(circle,#09070b 0 5px,#27202b 6px 8px);border:2px solid #b96ca5;display:grid;place-items:center;flex-shrink:0}
+.vinyl{width:95px;height:95px;border-radius:50%;background:repeating-radial-gradient(circle,#09070b 0 5px,#27202b 6px 8px);border:2px solid #b96ca5;display:grid;place-items:center;flex-shrink:0;animation:vinylSpin 8s linear infinite}
 .vinyl span{background:#ff9bd8;color:#2b102a;border-radius:50%;width:32px;height:32px;display:grid;place-items:center}
 .bar{height:4px;background:#5a3154;margin:12px 0}
 .bar i{display:block;width:36%;height:100%;background:#ff8bd2}
@@ -78,18 +88,48 @@ button{font:inherit;cursor:pointer}
 .track-name{color:#ffd2eb;font-weight:700;font-size:13px;margin-top:8px}
 .face{font-size:65px}
 .page{display:none}
-.page.active{display:block}
+.page.active{display:block;animation:pageReveal .55s ease both}
 .quizcard{max-width:760px;margin:10px auto}
 .question{font-size:19px;color:#ffd2eb;margin:15px 0}
 .answers{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.answer{background:#210e27;border:1px solid #a95a98;color:#ffe4f4;border-radius:13px;padding:12px;text-align:right;font:inherit;cursor:pointer}
+.answer{background:#210e27;border:1px solid #a95a98;color:#ffe4f4;border-radius:13px;padding:12px;text-align:right;font:inherit;cursor:pointer;transition:.2s}
+.answer:hover{border-color:#ff9bd8;transform:translateY(-2px)}
 .answer.selected{background:#ff9bd8;color:#2b0b27;font-weight:800}
-.progress{height:6px;background:#44213e;border-radius:9px;margin:15px 0}
-.progress i{display:block;height:100%;background:#ff82cc;width:0}
-.result{text-align:center;padding:20px;font-size:23px;color:#ff9bd8}
+.progress{height:6px;background:#44213e;border-radius:9px;margin:15px 0;overflow:hidden}
+.progress i{display:block;height:100%;background:#ff82cc;width:0;transition:width .4s}
+.result{text-align:center;padding:20px;font-size:23px;color:#ff9bd8;animation:photoReveal .6s ease}
 .footer{text-align:center;color:#d18cbb;font:24px "Great Vibes";margin:22px}
 .center{text-align:center}
 input{color:#ffd7ee}
+
+/* پاکت نامه متحرک */
+.envelope-wrap{display:flex;flex-direction:column;align-items:center;padding:35px 10px 15px}
+.envelope{width:220px;height:145px;position:relative;background:#d83d9e;border-radius:8px;cursor:pointer;box-shadow:0 0 25px #ff36b288;perspective:700px;margin:0 auto}
+.envelope:before{content:"";position:absolute;inset:0;background:#ff83cf;clip-path:polygon(0 0,50% 55%,100% 0);transform-origin:top;transition:transform .8s;z-index:4}
+.envelope:after{content:"";position:absolute;inset:0;background:#ed64b5;clip-path:polygon(0 100%,50% 48%,100% 100%);z-index:3}
+.envelope.open:before{transform:rotateX(180deg);z-index:1}
+.envelope-paper{position:absolute;width:88%;height:120px;left:6%;bottom:8px;background:#fff0fa;color:#8c286b;border-radius:7px;padding:12px;text-align:center;font-size:13px;line-height:1.8;overflow:hidden;transition:transform 1s ease;z-index:2}
+.envelope.open .envelope-paper{transform:translateY(-115px)}
+.envelope-heart{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%);font-size:32px;transition:opacity .3s}
+.envelope.open .envelope-heart{opacity:0}
+.envelope-hint{color:#ffc5e9;margin-top:30px;font-size:12px}
+
+/* صفحه ورود */
+.intro-screen{position:fixed;inset:0;z-index:9999;background:radial-gradient(circle,#511348,#09040d 75%);display:flex;align-items:center;justify-content:center;flex-direction:column;animation:introFade 2.8s forwards;pointer-events:none}
+.intro-screen h1{font:65px "Great Vibes";color:#ff9bd8;text-shadow:0 0 15px #ff36b2,0 0 40px #ff36b2;direction:ltr;animation:logoReveal 1.8s ease both}
+.intro-screen p{color:#ffd7ef;animation:logoReveal 2s ease both}
+@keyframes logoReveal{from{opacity:0;transform:translateY(25px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes introFade{0%,65%{opacity:1}100%{opacity:0;visibility:hidden}}
+@keyframes pageReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes photoReveal{from{opacity:0;transform:translateY(25px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes photoZoom{from{transform:scale(.9)}to{transform:scale(1)}}
+@keyframes vinylSpin{to{transform:rotate(360deg)}}
+@keyframes avatarGlow{from{box-shadow:0 0 12px #ff36b2}to{box-shadow:0 0 28px #ff36b2}}
+@keyframes floatHeart{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.65}85%{opacity:.5}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+.floating-hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.floating-heart{position:absolute;bottom:-40px;color:#ff83cf;opacity:0;animation:floatHeart linear infinite;text-shadow:0 0 12px #ff36b2}
+
 @media(max-width:1000px){.layout{grid-template-columns:150px 1fr}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){
 .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -110,11 +150,23 @@ input{color:#ffd7ee}
 .grid{grid-template-columns:1fr}
 .answers{grid-template-columns:1fr}
 .wheel{width:176px;height:176px;flex-basis:176px}
+.intro-screen h1{font-size:48px}
+}
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
 
 <body>
+
+<div class="intro-screen" id="introScreen">
+<h1>Pink Moon ♡</h1>
+<p>A little world for you...</p>
+</div>
+
+<div class="floating-hearts" id="floatingHearts"></div>
+
 <div class="shell">
 <header class="top">
 <div class="pill">⌂ خانه　♡</div>
@@ -202,7 +254,17 @@ input{color:#ffd7ee}
 <section class="page" id="letter">
 <div class="panel quizcard center">
 <h2>یه نامه فقط برای تو 💌</h2>
-<div class="letter">💌</div>
+<div class="envelope-wrap">
+<div class="envelope" id="loveEnvelope" onclick="openEnvelope()">
+<div class="envelope-paper">
+مبین جانم ♡<br>
+تو قشنگ‌ترین اتفاق روزهای منی...
+<br>دوستت دارم 💗
+</div>
+<div class="envelope-heart">💗</div>
+</div>
+<p class="envelope-hint" id="envelopeHint">برای باز کردن نامه روی پاکت بزن ♡</p>
+</div>
 <p class="question">مبین جانم، این گوشه‌ی کوچیک از اینترنت رو ساختم که هر وقت دلت خواست، یادت بیاد یه نفر هست که با فکر تو لبخند می‌زنه. دوستت دارم، بیشتر از چیزی که توی کلمه‌ها جا بشه. ♡</p>
 </div>
 </section>
@@ -422,7 +484,7 @@ document.getElementById('quizContent').innerHTML=`
 <div class="small">سؤال ${qi+1} از ۸</div>
 <div class="question">${q[0]}</div>
 <div class="answers">
-${q[1].map((x,i)=>`<button class="answer" onclick="choose(${i})">${x}</button>`).join('')}
+${q[1].map((x,i)=><button class="answer" onclick="choose(${i})">${x}</button>).join('')}
 </div>
 <p class="small">هر پاسخ درست ۱۲٫۵ امتیاز ♡</p>
 `;
@@ -472,6 +534,39 @@ qi=0;
 score=0;
 renderQ();
 }
+
+/* باز شدن پاکت نامه */
+function openEnvelope(){
+const envelope=document.getElementById('loveEnvelope');
+const hint=document.getElementById('envelopeHint');
+
+if(!envelope||envelope.classList.contains('open'))return;
+
+envelope.classList.add('open');
+hint.textContent='یه نامه از طرف من برای تو 💗';
+}
+
+/* قلب‌های شناور */
+const heartContainer=document.getElementById('floatingHearts');
+
+if(heartContainer){
+for(let i=0;i<18;i++){
+const heart=document.createElement('span');
+heart.className='floating-heart';
+heart.textContent=['♡','♥','✧','💗'][i%4];
+heart.style.left=Math.random()*100+'%';
+heart.style.animationDuration=(9+Math.random()*12)+'s';
+heart.style.animationDelay=(Math.random()*12)+'s';
+heart.style.fontSize=(12+Math.random()*18)+'px';
+heartContainer.appendChild(heart);
+}
+}
+
+/* پایان انیمیشن ورود */
+setTimeout(()=>{
+const intro=document.getElementById('introScreen');
+if(intro)intro.remove();
+},2900);
 </script>
 </body>
 </html>
