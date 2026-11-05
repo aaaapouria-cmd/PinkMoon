@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -8,156 +7,198 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-:root{--pink:#ff83cf;--pale:#ffd7ef;--bg:#09040d;--line:#ff8bd477}
+:root{
+--pink:#ff83cf;
+--pale:#ffd7ef;
+--bg:#09040d;
+--line:#ff8bd477;
+}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at 50% -15%,#511348,#16091b 42%,#08040c 80%);color:#ffe8f7;font-family:Vazirmatn,sans-serif;min-height:100vh}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#ffc5e9 1px,transparent 1.5px),radial-gradient(#d98aff 1px,transparent 1.5px);background-size:73px 73px,113px 113px;background-position:0 0,30px 40px;z-index:0}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+background:radial-gradient(ellipse at 50% -15%,#511348,#16091b 42%,#08040c 80%);
+color:#ffe8f7;
+font-family:Vazirmatn,sans-serif;
+min-height:100vh;
+}
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.22;
+background-image:
+radial-gradient(#ffc5e9 1px,transparent 1.5px),
+radial-gradient(#d98aff 1px,transparent 1.5px);
+background-size:73px 73px,113px 113px;
+background-position:0 0,30px 40px;
+z-index:0;
+}
 button{font:inherit;cursor:pointer}
 .shell{max-width:1480px;margin:auto;padding:12px 20px;position:relative;z-index:1}
-.top{height:70px;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;border-bottom:1px solid #ff8ad044}
-.pill{border:1px solid var(--line);border-radius:30px;padding:9px 16px;background:#2a0c28aa;width:max-content;font-size:13px}
+.top{
+height:70px;
+display:grid;
+grid-template-columns:1fr 1.5fr 1fr;
+align-items:center;
+border-bottom:1px solid #ff8ad044;
+}
+.pill{
+border:1px solid var(--line);
+border-radius:30px;
+padding:9px 16px;
+background:#2a0c28aa;
+width:max-content;
+font-size:13px;
+}
 .pill.end{justify-self:end}
-.brand{text-align:center;font:52px "Great Vibes";color:#ff9bd8;text-shadow:0 0 9px #ff6bc7,0 0 24px #ff36b2;direction:ltr}
-.brand small{display:block;font:11px Vazirmatn;color:#f9c9e8}
+.brand{
+text-align:center;
+font:52px "Great Vibes";
+color:#ff9bd8;
+text-shadow:0 0 9px #ff6bc7,0 0 24px #ff36b2;
+direction:ltr;
+}
+.brand small{
+display:block;
+font:11px Vazirmatn;
+color:#f9c9e8;
+}
 .layout{display:grid;grid-template-columns:185px 1fr;gap:17px;margin-top:14px}
-.side{background:linear-gradient(#230b25ee,#100711ee);border:1px solid var(--line);border-radius:22px;padding:15px 12px;min-height:680px;box-shadow:0 0 20px #ff4ab433;position:relative}
-.avatar{width:120px;height:120px;border:3px solid var(--pink);border-radius:50%;margin:8px auto;display:grid;place-items:center;font-size:55px;background:radial-gradient(circle,#ffb4e5,#8f3e8b 48%,#25102e);box-shadow:0 0 20px #ff36b2}
+.side{
+background:linear-gradient(#230b25ee,#100711ee);
+border:1px solid var(--line);
+border-radius:22px;
+padding:15px 12px;
+min-height:680px;
+box-shadow:0 0 20px #ff4ab433;
+position:relative;
+}
+.avatar{
+width:120px;height:120px;
+border:3px solid var(--pink);
+border-radius:50%;
+margin:8px auto;
+display:grid;
+place-items:center;
+font-size:55px;
+background:radial-gradient(circle,#ffb4e5,#8f3e8b 48%,#25102e);
+box-shadow:0 0 20px #ff36b2;
+animation:glow 3s ease-in-out infinite;
+}
 .name{text-align:center;font-weight:800}
 .sub{text-align:center;color:#d9a4cb;font-size:11px;margin:3px 0 20px}
 .nav{display:grid;gap:7px}
-.nav button{border:0;text-align:right;color:#f4c6e5;background:transparent;padding:10px 12px;border-radius:24px;transition:background .25s,color .25s,transform .25s}
-.nav button:hover,.nav button.active{background:linear-gradient(90deg,#ff8ad1,#d93aa8);color:#250b23;font-weight:800;box-shadow:0 0 15px #ff36b2}
+.nav button{
+border:0;
+text-align:right;
+color:#f4c6e5;
+background:transparent;
+padding:10px 12px;
+border-radius:24px;
+transition:.25s;
+}
+.nav button:hover,.nav button.active{
+background:linear-gradient(90deg,#ff8ad1,#d93aa8);
+color:#250b23;
+font-weight:800;
+box-shadow:0 0 15px #ff36b2;
+}
 .nav button:hover{transform:translateX(-3px)}
-.love{position:absolute;bottom:18px;text-align:center;left:0;right:0;font:28px "Great Vibes";color:#ff9bd8}
+.love{
+position:absolute;
+bottom:18px;
+text-align:center;
+left:0;right:0;
+font:28px "Great Vibes";
+color:#ff9bd8;
+}
 .main{min-width:0}
-.hero{min-height:320px;border:1px solid var(--line);border-radius:24px;box-shadow:0 0 18px #ff36b255;background:linear-gradient(90deg,rgba(15,4,17,.12),rgba(15,4,17,.94) 54%,rgba(15,4,17,.35));display:flex;align-items:center;padding:32px 5%;position:relative;overflow:hidden;margin-bottom:14px}
-.hero-photo{position:absolute;left:0;top:0;width:49%;height:100%;object-fit:cover;object-position:center 35%;opacity:.9;mask-image:linear-gradient(90deg,#000 55%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 100%)}
+.hero{
+min-height:320px;
+border:1px solid var(--line);
+border-radius:24px;
+box-shadow:0 0 18px #ff36b255;
+background:linear-gradient(90deg,rgba(15,4,17,.12),rgba(15,4,17,.94) 54%,rgba(15,4,17,.35));
+display:flex;
+align-items:center;
+padding:32px 5%;
+position:relative;
+overflow:hidden;
+margin-bottom:14px;
+}
+.hero-photo{
+position:absolute;
+left:0;top:0;
+width:49%;height:100%;
+object-fit:cover;
+object-position:center 35%;
+opacity:.9;
+mask-image:linear-gradient(90deg,#000 55%,transparent 100%);
+-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 100%);
+}
 .hero-copy{position:relative;z-index:1;max-width:56%}
-.hero h1{font-size:clamp(22px,3vw,35px);color:#ff9bd9;text-shadow:0 0 15px #ff36b2;margin:0 0 10px}
+.hero h1{
+font-size:clamp(22px,3vw,35px);
+color:#ff9bd9;
+text-shadow:0 0 15px #ff36b2;
+margin:0 0 10px;
+}
 .hero p{line-height:2;color:#f4cde6;font-size:14px}
-.btn{border:1px solid #ffc2e7;background:linear-gradient(110deg,#ffb2e2,#ef55b5);color:#300d2c;border-radius:30px;padding:10px 21px;font-weight:800;box-shadow:0 0 14px #ff36b2;cursor:pointer;transition:transform .25s,box-shadow .25s,filter .25s}
+.btn{
+border:1px solid #ffc2e7;
+background:linear-gradient(110deg,#ffb2e2,#ef55b5);
+color:#300d2c;
+border-radius:30px;
+padding:10px 21px;
+font-weight:800;
+box-shadow:0 0 14px #ff36b2;
+cursor:pointer;
+transition:.25s;
+}
 .btn:hover{transform:translateY(-3px);box-shadow:0 0 24px #ff36b2;filter:brightness(1.08)}
 .btn:active{transform:scale(.96)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .grid{display:grid;grid-template-columns:1.08fr 1fr 1.08fr;gap:12px}
-.panel{background:linear-gradient(145deg,rgba(45,15,44,.92),rgba(16,7,19,.95));border:1px solid var(--line);border-radius:20px;box-shadow:0 0 13px #ff4eb333,inset 0 0 22px #ff65c40a;padding:15px;min-height:175px;position:relative;overflow:hidden}
-.panel:before{content:"✧";position:absolute;left:12px;top:3px;color:#ff9cdb;font-size:24px}
+.panel{
+background:linear-gradient(145deg,rgba(45,15,44,.92),rgba(16,7,19,.95));
+border:1px solid var(--line);
+border-radius:20px;
+box-shadow:0 0 13px #ff4eb333,inset 0 0 22px #ff65c40a;
+padding:15px;
+min-height:175px;
+position:relative;
+overflow:hidden;
+}
+.panel:before{
+content:"✧";
+position:absolute;
+left:12px;top:3px;
+color:#ff9cdb;
+font-size:24px;
+}
 .panel h2{font-size:16px;color:#ffb2df;margin:0 0 12px}
 .count{display:flex;gap:6px;justify-content:space-around;margin:15px 0}
-.time{background:#160918;border:1px solid #ff8acb66;border-radius:13px;padding:7px 4px;text-align:center;flex:1}
+.time{
+background:#160918;
+border:1px solid #ff8acb66;
+border-radius:13px;
+padding:7px 4px;
+text-align:center;
+flex:1;
+}
 .time b{display:block;font-size:23px;text-shadow:0 0 12px #ff36b2}
 .time span{font-size:10px}
-.letter{height:80px;display:grid;place-items:center;font-size:60px;animation:letterFloat 3s ease-in-out infinite}
-.wheelrow{display:flex;align-items:center;gap:12px}
-.wheel{width:176px;height:176px;flex:0 0 176px;border-radius:50%;border:4px solid #ffb0df;box-shadow:0 0 18px #ff36b2;position:relative;transition:transform 3s cubic-bezier(.12,.75,.15,1);background:conic-gradient(#ff8bd1 0 45deg,#451344 45deg 90deg,#ffc0e7 90deg 135deg,#552052 135deg 180deg,#ff8bd1 180deg 225deg,#451344 225deg 270deg,#ffc0e7 270deg 315deg,#552052 315deg)}
-.wheel:after{content:"♡";position:absolute;inset:65px;border-radius:50%;background:#250b2a;border:2px solid #ffc1e7;display:grid;place-items:center;color:#ff9bd8;font-size:24px;z-index:2}
-.wlabel{position:absolute;left:50%;top:50%;width:70px;margin-left:-35px;margin-top:-9px;text-align:center;font-size:9px;font-weight:800;color:#2a0825;text-shadow:0 1px 2px #fff;transform-origin:center;z-index:1;line-height:1.1}
-.wlabel:nth-child(1){transform:rotate(22.5deg) translateY(-68px) rotate(-22.5deg)}
-.wlabel:nth-child(2){transform:rotate(67.5deg) translateY(-68px) rotate(-67.5deg)}
-.wlabel:nth-child(3){transform:rotate(112.5deg) translateY(-68px) rotate(-112.5deg)}
-.wlabel:nth-child(4){transform:rotate(157.5deg) translateY(-68px) rotate(-157.5deg)}
-.wlabel:nth-child(5){transform:rotate(202.5deg) translateY(-68px) rotate(-202.5deg)}
-.wlabel:nth-child(6){transform:rotate(247.5deg) translateY(-68px) rotate(-247.5deg)}
-.wlabel:nth-child(7){transform:rotate(292.5deg) translateY(-68px) rotate(-292.5deg)}
-.wlabel:nth-child(8){transform:rotate(337.5deg) translateY(-68px) rotate(-337.5deg)}
-.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.thumb{aspect-ratio:1;border-radius:8px;border:1px solid #ff9bd877;background:linear-gradient(135deg,#71386e,#24102e);display:grid;place-items:center;font-size:26px;overflow:hidden;cursor:pointer}
-.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.thumb:hover img{transform:scale(1.1)}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
-.gallery-shot{position:relative;aspect-ratio:3/4;border:1px solid #ff9bd899;border-radius:16px;overflow:hidden;background:#210e27;box-shadow:0 0 15px #ff4eb322;cursor:zoom-in;transition:transform .35s,box-shadow .35s;animation:photoAppear .65s both}
-.gallery-shot:nth-child(2){animation-delay:.08s}
-.gallery-shot:nth-child(3){animation-delay:.16s}
-.gallery-shot:nth-child(4){animation-delay:.24s}
-.gallery-shot:nth-child(5){animation-delay:.32s}
-.gallery-shot:nth-child(6){animation-delay:.4s}
-.gallery-shot:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 0 22px #ff4eb377}
-.gallery-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
-.gallery-shot:hover img{transform:scale(1.06)}
-.gallery-shot span{position:absolute;inset:auto 0 0;padding:20px 10px 9px;background:linear-gradient(transparent,#160715dd);font-size:11px;color:#ffe4f4}
-.lightbox{display:none;position:fixed;inset:0;background:#08030def;z-index:20;align-items:center;justify-content:center;padding:20px}
-.lightbox.open{display:flex;animation:fadeIn .25s ease}
-.lightbox img{max-width:min(92vw,900px);max-height:86vh;object-fit:contain;border:1px solid #ff9bd8;border-radius:15px;box-shadow:0 0 30px #ff36b2;animation:zoomIn .3s ease}
-.lightbox button{position:absolute;top:18px;left:20px;border:1px solid #ff9bd8;background:#2a0c28;color:#ffe8f7;border-radius:50%;width:42px;height:42px;font-size:22px}
-.music{display:flex;align-items:center;gap:13px}
-.vinyl{width:95px;height:95px;border-radius:50%;background:repeating-radial-gradient(circle,#09070b 0 5px,#27202b 6px 8px);border:2px solid #b96ca5;display:grid;place-items:center;flex-shrink:0}
-.vinyl span{background:#ff9bd8;color:#2b102a;border-radius:50%;width:32px;height:32px;display:grid;place-items:center}
-.bar{height:4px;background:#5a3154;margin:12px 0}
-.bar i{display:block;width:36%;height:100%;background:#ff8bd2}
 .small{font-size:11px;color:#cba1c2;line-height:1.8}
-.audio-player{display:block;width:100%;margin-top:14px;accent-color:#ff83cf;filter:drop-shadow(0 0 8px #ff36b255)}
-.track-name{color:#ffd2eb;font-weight:700;font-size:13px;margin-top:8px}
-.face{font-size:65px}
+.center{text-align:center}
 .page{display:none}
 .page.active{display:block;animation:pageAppear .45s ease both}
 .quizcard{max-width:760px;margin:10px auto}
-.question{font-size:19px;color:#ffd2eb;margin:15px 0}
-.answers{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.answer{background:#210e27;border:1px solid #a95a98;color:#ffe4f4;border-radius:13px;padding:12px;text-align:right;font:inherit;cursor:pointer;transition:transform .2s,background .2s}
-.answer:hover{transform:translateY(-2px);background:#54204b}
-.answer.selected{background:#ff9bd8;color:#2b0b27;font-weight:800}
-.progress{height:6px;background:#44213e;border-radius:9px;margin:15px 0}
-.progress i{display:block;height:100%;background:#ff82cc;width:0;transition:width .3s}
-.result{text-align:center;padding:20px;font-size:23px;color:#ff9bd8}
+.question{font-size:19px;color:#ffd2eb;margin:15px 0;line-height:2}
 .footer{text-align:center;color:#d18cbb;font:24px "Great Vibes";margin:22px}
-.center{text-align:center}
-input{color:#ffd7ee}
 
-/* انیمیشن‌های تزئینی */
-@keyframes pageAppear{
-from{opacity:0;transform:translateY(12px)}
-to{opacity:1;transform:translateY(0)}
-}
-@keyframes photoAppear{
-from{opacity:0;transform:translateY(18px) scale(.97)}
-to{opacity:1;transform:translateY(0) scale(1)}
-}
-@keyframes letterFloat{
-0%,100%{transform:translateY(0) rotate(-3deg)}
-50%{transform:translateY(-9px) rotate(3deg)}
-}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes zoomIn{from{transform:scale(.92);opacity:.5}to{transform:scale(1);opacity:1}}
-@keyframes introShow{
-0%{opacity:0;transform:scale(.9)}
-20%,75%{opacity:1;transform:scale(1)}
-100%{opacity:0;transform:scale(1.04)}
-}
-@keyframes floatHeart{
-0%{transform:translateY(105vh) rotate(0deg);opacity:0}
-15%{opacity:.65}
-85%{opacity:.55}
-100%{transform:translateY(-15vh) rotate(35deg);opacity:0}
-}
-@keyframes glow{
-0%,100%{box-shadow:0 0 15px #ff36b2}
-50%{box-shadow:0 0 28px #ff36b2,0 0 42px #ff83cf66}
-}
-
-/* صفحه شروع */
-.intro-screen{
-position:fixed;
-inset:0;
-z-index:100;
-pointer-events:none;
-display:grid;
-place-items:center;
-background:radial-gradient(circle,#45103e 0%,#16091b 55%,#08040c 100%);
-animation:introShow 2.4s ease forwards;
-}
-.intro-title{
-text-align:center;
-direction:ltr;
-font:clamp(48px,10vw,82px) "Great Vibes";
-color:#ffb1df;
-text-shadow:0 0 15px #ff36b2,0 0 40px #ff36b2;
-}
-.intro-title small{
-display:block;
-direction:rtl;
-font:14px Vazirmatn;
-color:#ffe0f2;
-margin-top:15px;
-}
+/* قلب‌های شناور */
 .floating-hearts{
 position:fixed;
 inset:0;
@@ -174,11 +215,298 @@ opacity:0;
 animation:floatHeart var(--duration) linear infinite;
 animation-delay:var(--delay);
 color:#ff9bd8;
+text-shadow:0 0 12px #ff36b2;
 }
 
-/* افکت چرخش صفحه */
-.avatar{animation:glow 3s ease-in-out infinite}
-.vinyl{animation:vinylSpin 8s linear infinite}
+/* نامه */
+.envelope-area{
+min-height:350px;
+display:grid;
+place-items:center;
+padding:25px 10px;
+}
+.envelope{
+position:relative;
+width:min(300px,85vw);
+height:190px;
+background:linear-gradient(145deg,#ff9bd8,#d83d9d);
+border-radius:8px;
+box-shadow:0 12px 35px #ff36b255;
+cursor:pointer;
+perspective:900px;
+transition:transform .3s;
+}
+.envelope:hover{transform:translateY(-5px)}
+.envelope:before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(135deg,#ffc4e7,#e75aa9);
+clip-path:polygon(0 0,50% 58%,100% 0);
+z-index:4;
+transform-origin:top;
+transition:transform .8s ease;
+}
+.envelope:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(35deg,#e75aa9,#ffb4df);
+clip-path:polygon(0 100%,50% 47%,100% 100%);
+z-index:3;
+}
+.envelope.open:before{transform:rotateX(180deg);z-index:1}
+.envelope-flap{
+position:absolute;
+inset:0;
+background:linear-gradient(135deg,#ef78ba,#ffb4df);
+clip-path:polygon(0 0,50% 55%,100% 0);
+z-index:4;
+}
+.envelope-letter{
+position:absolute;
+left:8%;
+width:84%;
+height:165px;
+bottom:8px;
+background:#fff0fa;
+color:#78285c;
+border-radius:8px;
+padding:17px 12px;
+text-align:center;
+font-size:12px;
+line-height:1.9;
+z-index:2;
+transition:transform 1s ease,bottom 1s ease;
+overflow:hidden;
+}
+.envelope.open .envelope-letter{
+transform:translateY(-115px);
+bottom:25px;
+}
+.seal{
+position:absolute;
+z-index:5;
+width:43px;height:43px;
+border-radius:50%;
+background:#9c236d;
+color:white;
+display:grid;
+place-items:center;
+left:calc(50% - 21px);
+top:calc(50% - 21px);
+box-shadow:0 0 12px #a52875;
+transition:opacity .3s;
+}
+.envelope.open .seal{opacity:0}
+.letter-hint{margin-top:20px;color:#ffb2df;font-size:13px}
+
+/* گالری */
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.thumb{
+aspect-ratio:1;
+border-radius:8px;
+border:1px solid #ff9bd877;
+background:linear-gradient(135deg,#71386e,#24102e);
+display:grid;
+place-items:center;
+font-size:26px;
+overflow:hidden;
+cursor:pointer;
+}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.thumb:hover img{transform:scale(1.1)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.gallery-shot{
+position:relative;
+aspect-ratio:3/4;
+border:1px solid #ff9bd899;
+border-radius:16px;
+overflow:hidden;
+background:#210e27;
+box-shadow:0 0 15px #ff4eb322;
+cursor:zoom-in;
+transition:.35s;
+animation:photoAppear .65s both;
+}
+.gallery-shot:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 0 22px #ff4eb377}
+.gallery-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.gallery-shot:hover img{transform:scale(1.06)}
+.gallery-shot span{
+position:absolute;
+inset:auto 0 0;
+padding:20px 10px 9px;
+background:linear-gradient(transparent,#160715dd);
+font-size:11px;
+color:#ffe4f4;
+}
+.lightbox{
+display:none;
+position:fixed;
+inset:0;
+background:#08030def;
+z-index:20;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+.lightbox.open{display:flex;animation:fadeIn .25s ease}
+.lightbox img{
+max-width:min(92vw,900px);
+max-height:86vh;
+object-fit:contain;
+border:1px solid #ff9bd8;
+border-radius:15px;
+box-shadow:0 0 30px #ff36b2;
+}
+.lightbox button{
+position:absolute;
+top:18px;left:20px;
+border:1px solid #ff9bd8;
+background:#2a0c28;
+color:#ffe8f7;
+border-radius:50%;
+width:42px;height:42px;
+font-size:22px;
+}
+
+/* موزیک */
+.music{display:flex;align-items:center;gap:13px}
+.vinyl{
+width:95px;height:95px;
+border-radius:50%;
+background:repeating-radial-gradient(circle,#09070b 0 5px,#27202b 6px 8px);
+border:2px solid #b96ca5;
+display:grid;
+place-items:center;
+flex-shrink:0;
+}
+.vinyl span{
+background:#ff9bd8;
+color:#2b102a;
+border-radius:50%;
+width:32px;height:32px;
+display:grid;
+place-items:center;
+}
+.vinyl.playing{animation:vinylSpin 3s linear infinite}
+.audio-player{display:block;width:100%;margin-top:14px;accent-color:#ff83cf}
+.track-name{color:#ffd2eb;font-weight:700;font-size:13px;margin-top:8px}
+
+/* گردونه */
+.wheel-wrap{
+position:relative;
+width:250px;height:250px;
+margin:25px auto;
+}
+.wheel{
+width:100%;height:100%;
+border-radius:50%;
+border:7px solid #ffc4e8;
+box-shadow:0 0 0 4px #a53683,0 0 30px #ff36b2, inset 0 0 12px #4c1744;
+position:relative;
+transition:transform 5s cubic-bezier(.12,.75,.15,1);
+background:conic-gradient(
+#ff9bd8 0deg 45deg,
+#4c194b 45deg 90deg,
+#ffd0e9 90deg 135deg,
+#7c2b69 135deg 180deg,
+#ff9bd8 180deg 225deg,
+#4c194b 225deg 270deg,
+#ffd0e9 270deg 315deg,
+#7c2b69 315deg 360deg
+);
+}
+.wheel:after{
+content:"♡";
+position:absolute;
+inset:calc(50% - 24px);
+border-radius:50%;
+background:radial-gradient(circle,#ffb6df,#8d276e);
+border:4px solid #ffe2f4;
+display:grid;
+place-items:center;
+color:#fff;
+font-size:27px;
+z-index:3;
+box-shadow:0 0 15px #ff36b2;
+}
+.wheel-label{
+position:absolute;
+width:72px;
+left:calc(50% - 36px);
+top:calc(50% - 9px);
+text-align:center;
+font-size:10px;
+font-weight:800;
+line-height:1.2;
+color:#300b2c;
+text-shadow:0 1px 2px #fff;
+transform-origin:50% 9px;
+}
+.wheel-label:nth-child(1){transform:rotate(22.5deg) translateY(-91px) rotate(-22.5deg)}
+.wheel-label:nth-child(2){transform:rotate(67.5deg) translateY(-91px) rotate(-67.5deg)}
+.wheel-label:nth-child(3){transform:rotate(112.5deg) translateY(-91px) rotate(-112.5deg)}
+.wheel-label:nth-child(4){transform:rotate(157.5deg) translateY(-91px) rotate(-157.5deg)}
+.wheel-label:nth-child(5){transform:rotate(202.5deg) translateY(-91px) rotate(-202.5deg)}
+.wheel-label:nth-child(6){transform:rotate(247.5deg) translateY(-91px) rotate(-247.5deg)}
+.wheel-label:nth-child(7){transform:rotate(292.5deg) translateY(-91px) rotate(-292.5deg)}
+.wheel-label:nth-child(8){transform:rotate(337.5deg) translateY(-91px) rotate(-337.5deg)}
+.pointer{
+position:absolute;
+top:-15px;
+left:calc(50% - 15px);
+width:0;height:0;
+border-left:15px solid transparent;
+border-right:15px solid transparent;
+border-top:30px solid #fff0fa;
+filter:drop-shadow(0 0 5px #ff36b2);
+z-index:5;
+}
+.wheel-result{
+min-height:35px;
+font-size:18px;
+color:#ffb4df;
+margin:14px 0;
+font-weight:800;
+}
+
+/* کوییز */
+.progress{height:6px;background:#44213e;border-radius:9px;margin:15px 0}
+.progress i{display:block;height:100%;background:#ff82cc;width:0;transition:width .3s}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.answer{
+background:#210e27;
+border:1px solid #a95a98;
+color:#ffe4f4;
+border-radius:13px;
+padding:12px;
+text-align:right;
+font:inherit;
+cursor:pointer;
+transition:.2s;
+}
+.answer:hover{transform:translateY(-2px);background:#54204b}
+.answer.selected{background:#ff9bd8;color:#2b0b27;font-weight:800}
+.answer.correct{background:#286d4b;border-color:#65e5a0;color:white}
+.answer.wrong{background:#792c50;border-color:#ff8aa8;color:white}
+.result{text-align:center;padding:20px;font-size:23px;color:#ff9bd8}
+.face{font-size:65px}
+
+/* انیمیشن‌ها */
+@keyframes pageAppear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes photoAppear{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes floatHeart{
+0%{transform:translateY(105vh) rotate(0deg);opacity:0}
+15%{opacity:.65}
+85%{opacity:.55}
+100%{transform:translateY(-15vh) rotate(35deg);opacity:0}
+}
+@keyframes glow{
+0%,100%{box-shadow:0 0 15px #ff36b2}
+50%{box-shadow:0 0 28px #ff36b2,0 0 42px #ff83cf66}
+}
 @keyframes vinylSpin{to{transform:rotate(360deg)}}
 
 @media(max-width:1000px){
@@ -199,11 +527,16 @@ color:#ff9bd8;
 .nav{display:flex;overflow:auto;flex:1;gap:4px}
 .nav button{white-space:nowrap;padding:8px;font-size:11px}
 .hero{min-height:290px;padding:20px}
-.hero-photo{width:100%;opacity:.42;mask-image:linear-gradient(0deg,#000 5%,transparent 100%);-webkit-mask-image:linear-gradient(0deg,#000 5%,transparent 100%)}
+.hero-photo{
+width:100%;opacity:.42;
+mask-image:linear-gradient(0deg,#000 5%,transparent 100%);
+-webkit-mask-image:linear-gradient(0deg,#000 5%,transparent 100%);
+}
 .hero-copy{max-width:100%;align-self:flex-start}
 .grid{grid-template-columns:1fr}
 .answers{grid-template-columns:1fr}
-.wheel{width:176px;height:176px;flex-basis:176px}
+.wheel-wrap{width:230px;height:230px}
+.wheel-label:nth-child(n){transform-origin:50% 9px}
 }
 @media(prefers-reduced-motion:reduce){
 *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
@@ -212,12 +545,6 @@ color:#ff9bd8;
 </head>
 
 <body>
-
-<div class="intro-screen" aria-hidden="true">
-<div class="intro-title">Pink Moon
-<small>یه دنیای کوچولو فقط برای ما... ♡</small>
-</div>
-</div>
 
 <div class="floating-hearts" aria-hidden="true">
 <span style="--left:5%;--size:19px;--duration:13s;--delay:0s">♡</span>
@@ -228,6 +555,7 @@ color:#ff9bd8;
 <span style="--left:64%;--size:13px;--duration:17s;--delay:3s">♡</span>
 <span style="--left:76%;--size:23px;--duration:14s;--delay:6s">♥</span>
 <span style="--left:88%;--size:17px;--duration:19s;--delay:2s">♡</span>
+<span style="--left:95%;--size:15px;--duration:15s;--delay:7s">✧</span>
 </div>
 
 <div class="shell">
@@ -240,7 +568,10 @@ color:#ff9bd8;
 <div class="layout">
 <aside class="side">
 <div class="avatar">🧸</div>
-<div><div class="name">مبین ♡</div><div class="sub">همیشه مالِ منی</div></div>
+<div>
+<div class="name">مبین ♡</div>
+<div class="sub">یه دنیای کوچولو برای تو</div>
+</div>
 <nav class="nav">
 <button class="active" data-page="home">⌂ خانه</button>
 <button data-page="letter">✉️ نامه</button>
@@ -249,21 +580,24 @@ color:#ff9bd8;
 <button data-page="quiz">♡ آزمون ما</button>
 <button data-page="wheelpage">✧ گردونه</button>
 </nav>
-<div class="love">I love you ♡</div>
+<div class="love">Pink Moon ♡</div>
 </aside>
 
 <main class="main">
+
+<!-- خانه -->
 <section class="page active" id="home">
 <div class="hero">
 <img class="hero-photo" src="couple.jpg" alt="عکس دونفره ما">
 <div class="hero-copy">
 <h1>به دنیای کوچولوی ما خوش اومدی مبین! ♡</h1>
-<p>یه گوشه‌ی دنج از دنیا، فقط برای من و تو...<br>پر از خاطره، سورپرایز و عشق‌های کوچولو.</p>
+<p>یه گوشه‌ی دنج از دنیا، فقط برای من و تو...<br>پر از خاطره، سورپرایز و لحظه‌های قشنگ.</p>
 <button class="btn" onclick="showPage('wheelpage')">بریم سراغ ماجراجویی　➜</button>
 </div>
 </div>
 
 <div class="grid">
+
 <div class="panel">
 <h2>از شروع قصه‌مون ♡</h2>
 <div class="count">
@@ -272,68 +606,112 @@ color:#ff9bd8;
 <div class="time"><b id="mins">۰۰</b><span>دقیقه</span></div>
 <div class="time"><b id="secs">۰۰</b><span>ثانیه</span></div>
 </div>
-<div class="small">از ۸ سپتامبر ۲۰۲۶ تا همین لحظه؛ و ادامه‌دار تا همیشه ♡</div>
+<div class="small">از ۸ سپتامبر ۲۰۲۶ تا همین لحظه ♡</div>
 </div>
 
 <div class="panel center">
 <h2>یه نامه مخصوص تو ♡</h2>
-<div class="letter">💌</div>
-<button class="btn" onclick="showPage('letter')">باز کردن نامه‌ی مخفی</button>
+<div class="envelope-area" style="min-height:125px;padding:5px">
+<div class="envelope" style="width:150px;height:95px" onclick="showPage('letter')">
+<div class="envelope-letter">یه نامه کوچولو برای تو ♡</div>
+<div class="envelope-flap"></div>
+<div class="seal">♥</div>
+</div>
+</div>
+<button class="btn" onclick="showPage('letter')">باز کردن نامه</button>
 </div>
 
 <div class="panel">
 <h2>گردونه‌ی سورپرایز ♡</h2>
-<div class="wheelrow">
-<div class="wheel" id="miniWheel"></div>
-<div class="small">بچرخون و یک سورپرایز بگیر!<br><button class="btn" onclick="spinWheel()">✧ بچرخون</button></div>
+<div class="center">
+<div class="wheel-wrap" style="width:155px;height:155px;margin:10px auto">
+<div class="pointer"></div>
+<div class="wheel" id="miniWheel">
+<div class="wheel-label">عکس</div><div class="wheel-label">ویس</div>
+<div class="wheel-label">آهنگ</div><div class="wheel-label">چالش</div>
+<div class="wheel-label">نامه</div><div class="wheel-label">سورپرایز</div>
+<div class="wheel-label">انتخاب</div><div class="wheel-label">خاطره</div>
+</div>
+</div>
+<button class="btn" onclick="spinWheel()">✧ بچرخون</button>
 </div>
 </div>
 
 <div class="panel">
 <h2>گوشه‌ی خاطرات ♡</h2>
 <div class="thumbs" id="homeThumbs"></div>
-<p class="small">شش قاب کوچولو از عکس‌های تو ♡</p>
+<p class="small">شش قاب کوچولو از عکس‌ها ♡</p>
 <button class="btn" onclick="showPage('memories')">دیدن خاطرات</button>
 </div>
 
 <div class="panel">
 <h2>موزیک مخصوص ما ♡</h2>
 <div class="music">
-<div class="vinyl"><span>♥️</span></div>
-<div class="small">Our little melody ♫<div class="bar"><i></i></div>⤨　◀️　Ⅱ　▶️　⤻<p>آهنگ مورد علاقه‌مون رو اینجا بذار.</p></div>
+<div class="vinyl"><span>♥</span></div>
+<div class="small">Our little melody ♫
+<div class="track-name">Love Story × Golden Brown (Live)</div>
 </div>
+</div>
+<audio class="audio-player" controls preload="metadata">
+<source src="our-song.m4a" type="audio/mp4">
+مرورگرت از پخش صوت پشتیبانی نمی‌کند.
+</audio>
 </div>
 
 <div class="panel">
 <h2>یه پیام کوچولو ♡</h2>
 <div class="music">
 <div class="face">🐻‍❄️</div>
-<div class="small">مبین عزیزم، تو قشنگ‌ترین اتفاق روزهای منی...<br>این سایت یه یادگاری کوچولو از عشقمه ♡</div>
+<div class="small">مبین عزیز، این سایت یه یادگاری کوچولو از لحظه‌های قشنگه... ♡</div>
 </div>
 </div>
+
 </div>
 </section>
 
+<!-- نامه -->
 <section class="page" id="letter">
 <div class="panel quizcard center">
 <h2>یه نامه فقط برای تو 💌</h2>
-<div class="letter">💌</div>
-<p class="question">مبین جانم، این گوشه‌ی کوچیک از اینترنت رو ساختم که هر وقت دلت خواست، یادت بیاد یه نفر هست که با فکر تو لبخند می‌زنه. دوستت دارم، بیشتر از چیزی که توی کلمه‌ها جا بشه. ♡</p>
+<p class="small">روی پاکت بزن تا نامه باز بشه!</p>
+
+<div class="envelope-area">
+<div>
+<div class="envelope" id="mainEnvelope" onclick="openEnvelope()">
+<div class="envelope-letter">
+<strong>برای مبین ♡</strong>
+<br>
+این گوشه‌ی کوچیک از اینترنت رو ساختم که هر وقت دلت خواست، یادت بیاد یه نفر هست که به یادت می‌افته و برات لحظه‌های قشنگ آرزو می‌کنه.
+<br>
+<br>
+دوستت دارم ♡
+</div>
+<div class="envelope-flap"></div>
+<div class="seal">♥</div>
+</div>
+<div class="letter-hint" id="letterHint">برای باز کردن نامه روی پاکت کلیک کن ♡</div>
+</div>
+</div>
+<button class="btn" onclick="openEnvelope()">باز کردن نامه 💌</button>
 </div>
 </section>
 
+<!-- گالری -->
 <section class="page" id="memories">
 <div class="panel quizcard">
 <h2>گالری خاطرات ما ♡</h2>
-<p class="small">شش قاب از تو، برای گوشه‌ی کوچیک دنیای ما. برای دیدن هر عکس روش بزن ♡</p>
+<p class="small">برای دیدن هر عکس روش بزن ♡</p>
 <div class="gallery-grid" id="photoGrid"></div>
 </div>
 </section>
 
+<!-- موزیک -->
 <section class="page" id="music">
 <div class="panel quizcard center">
 <h2>موزیک مخصوص ما ♡</h2>
-<div class="vinyl" style="margin:20px auto;width:150px;height:150px"><span>♥️</span></div>
+<div class="vinyl" style="margin:20px auto;width:150px;height:150px">
+<span>♥</span>
+</div>
 <p class="question">آهنگی که هر بار می‌شنویم یاد هم می‌افتیم...</p>
 <div class="track-name">Love Story × Golden Brown (Live)</div>
 <p class="small">انتخاب تو برای دنیای کوچولوی ما ♡</p>
@@ -344,19 +722,35 @@ color:#ff9bd8;
 </div>
 </section>
 
+<!-- گردونه -->
 <section class="page" id="wheelpage">
 <div class="panel quizcard center">
 <h2>گردونه‌ی سورپرایز ♡</h2>
-<div class="wheel" id="bigWheel" style="width:230px;height:230px;margin:25px auto"></div>
-<button class="btn" onclick="spinWheel()">بچرخون ببین چی نصیبت می‌شه!</button>
-<p id="wheelResult" class="question"></p>
-<p class="small">انجام چالش‌ها کاملاً اختیاریه ♡</p>
+<p class="small">بچرخون ببین این بار چه چیزی انتخاب می‌شه!</p>
+<div class="wheel-wrap">
+<div class="pointer"></div>
+<div class="wheel" id="bigWheel">
+<div class="wheel-label">📸 عکس</div>
+<div class="wheel-label">🎙 ویس</div>
+<div class="wheel-label">🎵 آهنگ</div>
+<div class="wheel-label">🎀 چالش</div>
+<div class="wheel-label">💌 نامه</div>
+<div class="wheel-label">🎁 سورپرایز</div>
+<div class="wheel-label">⭐ انتخاب تو</div>
+<div class="wheel-label">🌙 خاطره</div>
+</div>
+</div>
+<button class="btn" id="spinButton" onclick="spinWheel()">بچرخون ببین چی نصیبت می‌شه!</button>
+<div id="wheelResult" class="wheel-result"></div>
+<p class="small">انجام هر پیشنهادی کاملاً اختیاریه ♡</p>
 </div>
 </section>
 
+<!-- کوییز -->
 <section class="page" id="quiz">
 <div class="panel quizcard">
 <h2>چقدر منو می‌شناسی؟ ♡</h2>
+<p class="small">ببین چندتا از سؤال‌ها رو درست جواب می‌دی!</p>
 <div class="progress"><i id="progress"></i></div>
 <div id="quizContent"></div>
 </div>
@@ -373,14 +767,6 @@ color:#ff9bd8;
 </div>
 
 <script>
-/* حذف صفحه شروع؛ این لایه هیچ‌وقت جلوی کلیک‌ها را نمی‌گیرد */
-const intro=document.querySelector('.intro-screen');
-if(intro){
-setTimeout(()=>{
-intro.remove();
-},2450);
-}
-
 /* تصاویر گالری */
 const galleryPhotos=[
 'gallery-1.jpg',
@@ -404,19 +790,33 @@ document.getElementById('lightbox').classList.remove('open');
 }
 
 galleryPhotos.forEach((file,i)=>{
-const src=file;
 const card=document.createElement('div');
 card.className='gallery-shot';
-card.innerHTML=`<img src="${src}" alt="عکس گالری ${i+1}" loading="lazy"><span>قاب خاطره ${String(i+1).toLocaleString('fa-IR')} ♡</span>`;
-card.onclick=()=>openPhoto(src);
+
+const img=document.createElement('img');
+img.src=file;
+img.alt='عکس گالری '+(i+1);
+img.loading='lazy';
+
+const caption=document.createElement('span');
+caption.textContent='قاب خاطره '+(i+1).toLocaleString('fa-IR')+' ♡';
+
+card.append(img,caption);
+card.onclick=()=>openPhoto(file);
 photoGrid.appendChild(card);
 
 const thumb=document.createElement('div');
 thumb.className='thumb';
-thumb.innerHTML=`<img src="${src}" alt="عکس ${i+1}" loading="lazy">`;
+
+const thumbImg=document.createElement('img');
+thumbImg.src=file;
+thumbImg.alt='عکس '+(i+1);
+thumbImg.loading='lazy';
+
+thumb.appendChild(thumbImg);
 thumb.onclick=()=>{
 showPage('memories');
-openPhoto(src);
+openPhoto(file);
 };
 homeThumbs.appendChild(thumb);
 });
@@ -430,10 +830,15 @@ const pages=[...document.querySelectorAll('.page')];
 
 function showPage(id){
 pages.forEach(p=>p.classList.toggle('active',p.id===id));
+
 document.querySelectorAll('.nav button').forEach(b=>{
 b.classList.toggle('active',b.dataset.page===id);
 });
-if(id==='quiz'&&!started)renderQ();
+
+if(id==='quiz'&&!quizStarted){
+renderQuestion();
+}
+
 window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -441,159 +846,268 @@ document.querySelectorAll('.nav button').forEach(b=>{
 b.onclick=()=>showPage(b.dataset.page);
 });
 
-/* گردونه */
-const labels=[
-'📸 عکس','🎥 ویدیو','🎙 ویس','🎁 انتخاب با تو',
-'💌 نامه','🎵 آهنگ','🔄 دوباره بچرخون','😈 جریمه'
-];
+/* شمارنده */
+const startDate=new Date('2026-09-08T00:00:00');
 
-function makeWheel(el){
-labels.forEach(t=>{
-const s=document.createElement('span');
-s.className='wlabel';
-s.textContent=t;
-el.appendChild(s);
-});
+function updateCounter(){
+const now=new Date();
+let diff=Math.max(0,now-startDate);
+
+const days=Math.floor(diff/86400000);
+diff%=86400000;
+
+const hours=Math.floor(diff/3600000);
+diff%=3600000;
+
+const mins=Math.floor(diff/60000);
+diff%=60000;
+
+const secs=Math.floor(diff/1000);
+
+document.getElementById('days').textContent=days.toLocaleString('fa-IR');
+document.getElementById('hours').textContent=String(hours).padStart(2,'0').toLocaleString('fa-IR');
+document.getElementById('mins').textContent=String(mins).padStart(2,'0').toLocaleString('fa-IR');
+document.getElementById('secs').textContent=String(secs).padStart(2,'0').toLocaleString('fa-IR');
+}
+updateCounter();
+setInterval(updateCounter,1000);
+
+/* پاکت نامه */
+function openEnvelope(){
+const envelope=document.getElementById('mainEnvelope');
+envelope.classList.toggle('open');
+
+document.getElementById('letterHint').textContent=
+envelope.classList.contains('open')
+?'نامه برای تو باز شد ♡'
+:'برای باز کردن نامه روی پاکت کلیک کن ♡';
 }
 
-makeWheel(document.getElementById('miniWheel'));
-makeWheel(document.getElementById('bigWheel'));
-
-const prizes=[
-'📸 عکس — یک عکس مخصوص برام بفرست',
-'🎥 ویدیو — یک ویدیوی کوتاه بفرست',
-'🎙 ویس — یک ویس با موضوع انتخابی ضبط کن',
-'🎁 انتخاب با تو — انتخاب کن من برات چه‌کاری انجام بدم',
-'💌 نامه — یک جمله از احساست بنویس',
-'🎵 آهنگ — یک آهنگ بخون',
-'🔄 دوباره بچرخون — یک بار دیگه گردونه رو بچرخون',
-'😈 جریمه — یک چالش بامزه و بی‌خطر انجام بده'
+/* گردونه */
+const wheelLabels=[
+'📸 عکس',
+'🎙 ویس',
+'🎵 آهنگ',
+'🎀 چالش',
+'💌 نامه',
+'🎁 سورپرایز',
+'⭐ انتخاب تو',
+'🌙 خاطره'
 ];
 
-let busy=false;
+let wheelSpinning=false;
+let wheelRotation=0;
 
 function spinWheel(){
-if(busy)return;
-busy=true;
+if(wheelSpinning)return;
 
-const n=Math.floor(Math.random()*8);
-const deg=1800+n*45+Math.random()*30;
+wheelSpinning=true;
 
-['miniWheel','bigWheel'].forEach(id=>{
-const el=document.getElementById(id);
-if(el)el.style.transform=`rotate(${deg}deg)`;
-});
-
+const button=document.getElementById('spinButton');
 const result=document.getElementById('wheelResult');
-if(result)result.textContent='گردونه در حال چرخیدنه... ♡';
 
-setTimeout(()=>{
-if(result)result.textContent=prizes[n];
-busy=false;
-},3050);
-}
+if(button)button.disabled=true;
+if(result)result.textContent='گردونه داره می‌چرخه... ✨';
 
-/* شمارنده */
-const start=new Date('2026-09-08T00:00:00');
+const selected=Math.floor(Math.random()*wheelLabels.length);
+const segment=360/wheelLabels.length;
+const target=(360-(selected*segment+segment/2)+360)%360;
 
-function toPersianNumber(value){
-return String(value).replace(/\d/g,x=>'۰۱۲۳۴۵۶۷۸۹'[Number(x)]);
-}
+wheelRotation+=360*5+target;
 
-function tick(){
-const ms=Math.max(0,Date.now()-start.getTime());
-const d=Math.floor(ms/86400000);
-const h=Math.floor(ms/3600000)%24;
-const m=Math.floor(ms/60000)%60;
-const s=Math.floor(ms/1000)%60;
-
-document.getElementById('days').textContent=d.toLocaleString('fa-IR');
-document.getElementById('hours').textContent=toPersianNumber(String(h).padStart(2,'0'));
-document.getElementById('mins').textContent=toPersianNumber(String(m).padStart(2,'0'));
-document.getElementById('secs').textContent=toPersianNumber(String(s).padStart(2,'0'));
-}
-
-tick();
-setInterval(tick,1000);
-
-/* آزمون */
-const qs=[
-['رنگ مورد علاقه‌ی من چیه؟',['قرمز و زرد','آبی، مشکی، سفید','سبز و بنفش','فقط صورتی'],1],
-['انیمه‌ی مورد علاقه‌ی من کدومه؟',['Death Note','شیطان‌کش','Black Clover','مرگ فوری'],0],
-['اگه یه روز کامل وقت آزاد داشته باشم، ترجیحم چیه؟',['برم بیرون','تمام روز بخوابم','فیلم ببینم','بازی کنم'],1],
-['وقتی ناراحتم، چی بیشتر خوشحالم می‌کنه؟',['غذا','خرید','دیدن مبین','خواب'],2],
-['کدوم رو بیشتر دوست دارم؟',['بازی تک‌نفره','بازی دونفره با مبین','فیلم دیدن','کتاب خوندن'],1],
-['فیلم مورد علاقه‌ی من چیه؟',['Inception','Interstellar','Titanic','Avatar'],1],
-['ترجیح می‌دم وقتم رو با کی بگذرونم؟',['دوستام','تنهایی','مبین','خانواده'],2],
-['اگه با هم سفر کنیم، کدوم رو انتخاب می‌کنم؟',['یه جای خلوت و آروم','یه شهر شلوغ و پر از تفریح','کوه و طبیعت','یه روستای دور'],1]
+const wheels=[
+document.getElementById('bigWheel'),
+document.getElementById('miniWheel')
 ];
 
-let qi=0;
-let score=0;
-let started=false;
-let answered=false;
-
-function renderQ(){
-started=true;
-answered=false;
-
-const q=qs[qi];
-document.getElementById('progress').style.width=(qi/8*100)+'%';
-
-document.getElementById('quizContent').innerHTML=`
-<div class="small">سؤال ${qi+1} از ۸</div>
-<div class="question">${q[0]}</div>
-<div class="answers">
-${q[1].map((x,i)=>`<button class="answer" onclick="choose(${i})">${x}</button>`).join('')}
-</div>
-<p class="small">هر پاسخ درست ۱۲٫۵ امتیاز ♡</p>
-`;
+wheels.forEach(w=>{
+if(w){
+w.style.transition='transform 5s cubic-bezier(.12,.75,.15,1)';
+w.style.transform='rotate('+wheelRotation+'deg)';
 }
-
-function choose(i){
-if(answered)return;
-answered=true;
-
-if(i===qs[qi][2])score+=12.5;
-
-document.querySelectorAll('.answer').forEach((b,j)=>{
-b.disabled=true;
-if(j===qs[qi][2])b.classList.add('selected');
 });
 
-const next=document.createElement('button');
-next.className='btn';
-next.style.marginTop='15px';
-next.textContent=qi===7?'دیدن نتیجه ♡':'سؤال بعدی ←';
+setTimeout(()=>{
+if(result){
+result.textContent='نتیجه: '+wheelLabels[selected]+' ♡';
+}
+if(button)button.disabled=false;
+wheelSpinning=false;
+},5100);
+}
 
-next.onclick=()=>{
-qi++;
+/* کوییز */
+const questions=[
+{
+q:'کدوم رنگ توی تم Pink Moon بیشتر استفاده شده؟',
+a:['صورتی و بنفش','آبی و سبز','زرد و نارنجی','قرمز و سفید'],
+correct:0
+},
+{
+q:'اسم این سایت چیه؟',
+a:['Blue Sky','Pink Moon','Moon Light','Pink World'],
+correct:1
+},
+{
+q:'کدوم ایموجی بیشتر توی سایت دیده می‌شه؟',
+a:['🧸','🚗','⚽','🍕'],
+correct:0
+},
+{
+q:'اسم صفحه‌ی عکس‌ها چیه؟',
+a:['Music','Quiz','Memories','Letter'],
+correct:2
+},
+{
+q:'کدوم بخش برای شنیدن آهنگه؟',
+a:['Gallery','Music','Wheel','Letter'],
+correct:1
+},
+{
+q:'گردونه چند گزینه داره؟',
+a:['۴','۶','۸','۱۰'],
+correct:2
+},
+{
+q:'نامه‌ی مخفی کجا قرار داره؟',
+a:['صفحه نامه','صفحه موزیک','گالری','صفحه آزمون'],
+correct:0
+},
+{
+q:'اسم کسی که این سایت براش ساخته شده چیه؟',
+a:['کیان','مبین','آرین','پارسا'],
+correct:1
+}
+];
 
-if(qi<8){
-renderQ();
-}else{
-document.getElementById('progress').style.width='100%';
+let questionIndex=0;
+let score=0;
+let selectedAnswer=null;
+let quizStarted=false;
+let quizFinished=false;
 
-document.getElementById('quizContent').innerHTML=`
-<div class="result">
-${score>=75?'آفرین به همسر گلمممم 💗🥹':'خاک تو سرت همسر عزیزم 😂💔'}
-</div>
-<p class="center">امتیازت: ${score} از ۱۰۰</p>
-<div class="center">
-<button class="btn" onclick="restartQuiz()">دوباره امتحان کن</button>
+function renderQuestion(){
+quizStarted=true;
+quizFinished=false;
+questionIndex=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const container=document.getElementById('quizContent');
+const progress=document.getElementById('progress');
+
+if(questionIndex>=questions.length){
+showQuizResult();
+return;
+}
+
+const q=questions[questionIndex];
+selectedAnswer=null;
+
+progress.style.width=(questionIndex/questions.length*100)+'%';
+
+container.innerHTML=`
+<div class="small">سؤال ${questionIndex+1} از ${questions.length}</div>
+<div class="question">${q.q}</div>
+<div class="answers" id="answerList"></div>
+<div style="margin-top:18px" class="center">
+<button class="btn" id="nextQuestion" disabled>سؤال بعدی ←</button>
 </div>
 `;
-}
+
+const answerList=document.getElementById('answerList');
+
+q.a.forEach((answer,index)=>{
+const btn=document.createElement('button');
+btn.className='answer';
+btn.textContent=answer;
+
+btn.onclick=()=>{
+if(selectedAnswer!==null)return;
+
+selectedAnswer=index;
+
+const all=[...answerList.querySelectorAll('.answer')];
+all.forEach((b,i)=>{
+b.disabled=true;
+if(i===q.correct)b.classList.add('correct');
+else if(i===index)b.classList.add('wrong');
+});
+
+if(index===q.correct)score++;
+
+document.getElementById('nextQuestion').disabled=false;
 };
 
-document.getElementById('quizContent').appendChild(next);
+answerList.appendChild(btn);
+});
+
+document.getElementById('nextQuestion').onclick=()=>{
+questionIndex++;
+showQuestion();
+};
+}
+
+function showQuizResult(){
+quizFinished=true;
+document.getElementById('progress').style.width='100%';
+
+const container=document.getElementById('quizContent');
+
+let message='یه بار دیگه امتحان کن! ♡';
+if(score>=7)message='حافظه‌ات فوق‌العاده‌ست! 🌟';
+else if(score>=5)message='خیلی خوب بود! 🎀';
+else if(score>=3)message='بد نبود، دوباره تلاش کن! ♡';
+
+container.innerHTML=`
+<div class="result">🎉</div>
+<div class="center">
+<div class="question">آزمون تموم شد!</div>
+<div class="result">${score} از ${questions.length}</div>
+<p class="question">${message}</p>
+<button class="btn" onclick="restartQuiz()">شروع دوباره ♡</button>
+</div>
+`;
 }
 
 function restartQuiz(){
-qi=0;
+quizStarted=true;
+questionIndex=0;
 score=0;
-renderQ();
+showQuestion();
 }
+
+/* کنترل موزیک‌ها */
+const audioPlayers=[...document.querySelectorAll('audio')];
+
+audioPlayers.forEach(player=>{
+player.addEventListener('play',()=>{
+audioPlayers.forEach(other=>{
+if(other!==player)other.pause();
+});
+
+document.querySelectorAll('.vinyl').forEach(v=>{
+v.classList.add('playing');
+});
+});
+
+player.addEventListener('pause',()=>{
+if(!audioPlayers.some(a=>!a.paused)){
+document.querySelectorAll('.vinyl').forEach(v=>{
+v.classList.remove('playing');
+});
+}
+});
+
+player.addEventListener('ended',()=>{
+document.querySelectorAll('.vinyl').forEach(v=>{
+v.classList.remove('playing');
+});
+});
+});
 </script>
+
 </body>
 </html>
